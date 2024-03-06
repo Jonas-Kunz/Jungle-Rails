@@ -50,6 +50,7 @@
       </div>
     </div>
   <% else %>
-    <p class="alert alert-info" style="width:38rem">Your Cart is empty click <a class="navbar-brand" href="<%= root_path %>" style="margin: 0">here</a> to return home and continue shopping.</p> 
+    <h4>Your cart is empty</h4>
+    <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %> 
   <% end %>
 </section>
