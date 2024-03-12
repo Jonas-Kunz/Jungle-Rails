@@ -5,6 +5,7 @@ return unless Rails.env.test?
 
 CypressRails.hooks.before_server_start do
   # Called once, before either the transaction or the server is started
+  DatabaseCleaner.clean
   cat1 = Category.find_or_create_by! name: 'Evergreens'
 
   cat1.products.create!({
@@ -24,14 +25,16 @@ CypressRails.hooks.before_server_start do
     price: 24.99
   })
 
-  User.create!(first_name: "Kid", last_name: "Goat", email: "Goat@dog.com", password: "123123123", password_confirmation: "123123123")
+  User.create!(first_name: "Jonas", last_name: "Kunz", email: "email@email.com", password: "1234567", password_confirmation: "1234567")
 end
 
 CypressRails.hooks.after_transaction_start do
+  
   # Called after the transaction is started (at launch and after each reset)
 end
 
 CypressRails.hooks.after_state_reset do
+  DatabaseCleaner.clean
   # Triggered after `/cypress_rails_reset_state` is called
 end
 
