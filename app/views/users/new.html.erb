@@ -7,15 +7,25 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-1">
     <%= form_with model: @user, url: users_path, local: true do |f| %>
+
       <% flash.each do |type, msg| %>
-      <div class="alert alert-danger">
-        <strong>The following errors prevented signup:</strong>
-          <% msg.each do |err| %>
-          <ul>
-            <li><%= err %></li> 
-          </ul>
-          <% end %>  
-      </div>  
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-danger">
+            <strong>The following errors prevented signup:</strong>
+              <ul>
+                <li><%= msg %></li> 
+              </ul>
+            </div>  
+        <% elsif msg.is_a?(Array) %> 
+          <div class="alert alert-danger">
+            <strong>The following errors prevented signup:</strong>
+              <% msg.each do |err| %>
+                <ul>
+                  <li><%= err %></i>
+                </ul>
+              <% end %>
+            </div>
+        <% end %>
       <% end %>
       
       <div class="form-group">
