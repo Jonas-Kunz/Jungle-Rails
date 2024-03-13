@@ -61,3 +61,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 ![Sign Up Page with errors](https://github.com/Jonas-Kunz/Jungle-Rails/blob/main/docs/signUpErrors.png)
 
 ![Order Confirmation Email](https://github.com/Jonas-Kunz/Jungle-Rails/blob/main/docs/orderEmail.png)
+
+![Cart](https://github.com/Jonas-Kunz/Jungle-Rails/blob/main/docs/cart.png)
+
+![Order Confirmation](https://github.com/Jonas-Kunz/Jungle-Rails/blob/main/docs/orderConfirmation.png)
